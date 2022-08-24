@@ -1,0 +1,29 @@
+{% extends 'yeld.html' %}
+
+{% block 'titulo' %} Aqui é o aluno {% endblock %}
+
+{% block 'conteudo' %}
+{% load bootstrap5 %}
+<h1>Lista de Aluno</h1>
+{% bootstrap_css %}
+{% bootstrap_messages %}
+
+<table class="table">
+    <thead>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th colspan="2" >Opções</th>
+    </thead>
+    <tbody>
+    {% for a in aluno %}
+        <tr>
+            <td>{{ a.nome }}</td>
+            <td>{{ a.telefone }}</td>
+            <td><a class="btn btn-danger" href="">Editar</a></td>
+            <td><a class="btn btn-primary" href="">Excluir</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'yeld.html' %}
+
+{% block 'titulo' %} Aqui é o aluno {% endblock %}
+
+{% block 'conteudo' %}
+{% load bootstrap5 %}
+<h1>Aluno</h1>
+{% bootstrap_css %}
+{% bootstrap_messages %}
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-success">Salvar</button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}
